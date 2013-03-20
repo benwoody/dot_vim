@@ -5,6 +5,7 @@ set backup
 set backupdir=~/.tmp/swp
 set directory=~/.tmp/swp
 
+colorscheme vividchalk
 syntax on
 filetype plugin indent on
 filetype indent on
