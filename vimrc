@@ -7,6 +7,8 @@ set directory=~/.tmp/swp
 
 syntax on
 filetype plugin indent on
+filetype indent on
+filetype plugin on
 
 set nocompatible
 set backspace=indent,eol,start
@@ -26,3 +28,5 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+
+imap <S-CR>    <CR><CR>end<Esc>-cc
