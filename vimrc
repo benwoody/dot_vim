@@ -1,7 +1,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-set backupdir=~/.vim/tmp
+set backup
+set backupdir=~/.tmp/swp
+set directory=~/.tmp/swp
 
 syntax on
 filetype plugin indent on
@@ -18,3 +20,9 @@ set shiftwidth=2
 set softtabstop=2
 
 set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B\ (%b)%)
+
+" STOP USING THE ARROWS
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
