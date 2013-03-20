@@ -1,6 +1,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set backupdir=~/.vim/tmp
+
 syntax on
 filetype plugin indent on
 
