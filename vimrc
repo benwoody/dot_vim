@@ -17,7 +17,7 @@ set history=50
 set ruler
 set showcmd
 set incsearch
-
+set number
 set shiftwidth=2
 set softtabstop=2
 
