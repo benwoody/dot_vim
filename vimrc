@@ -31,3 +31,5 @@ map <Up> <Nop>
 map <Down> <Nop>
 
 imap <S-CR>    <CR><CR>end<Esc>-cc
+
+let g:Powerline_symbols = "unicode"
