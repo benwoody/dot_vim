@@ -11,18 +11,18 @@ filetype plugin indent on
 filetype indent on
 filetype plugin on
 
+set t_Co=256
 set nocompatible
 set backspace=indent,eol,start
 set autoindent
 set history=50
 set ruler
+set laststatus=2
 set showcmd
 set incsearch
 set number
 set shiftwidth=2
 set softtabstop=2
-
-set statusline=%t%(\ [%n%M]%)%(\ %H%R%W%)\ %(%c-%v,\ %l\ of\ %L,\ (%o)\ %P\ 0x%B\ (%b)%)
 
 " STOP USING THE ARROWS
 map <Left> <Nop>
