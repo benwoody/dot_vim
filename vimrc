@@ -8,8 +8,6 @@ set directory=~/.tmp/swp
 colorscheme vividchalk
 syntax on
 filetype plugin indent on
-filetype indent on
-filetype plugin on
 
 set t_Co=256
 set nocompatible
