@@ -2,7 +2,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " General stuffs
-set history=1000
+set history=100
 
 filetype plugin on
 filetype plugin indent on
@@ -28,11 +28,14 @@ set nocompatible
 set backspace=indent,eol,start
 set autoindent
 set laststatus=2
+set winwidth=81
 
 set showcmd
 set incsearch
 set hlsearch
 
+" Visuals for proper editing
+set colorcolumn=80
 set ruler
 set number
 
