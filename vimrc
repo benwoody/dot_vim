@@ -66,3 +66,6 @@ autocmd BufReadPost *
 imap <S-CR>    <CR><CR>end<Esc>-cc
 
 let g:Powerline_symbols = "unicode"
+
+" Ctags
+set tags=./.git/tags
