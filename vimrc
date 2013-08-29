@@ -9,6 +9,8 @@ filetype plugin indent on
 
 let mapleader = ","
 
+vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
 " I rarely use backups, but just in case
 set backup
 set backupdir=~/.tmp/swp
