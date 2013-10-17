@@ -44,8 +44,8 @@ set number
 " Tabbing
 set expandtab
 set smarttab
-set shiftwidth=2
-set softtabstop=2
+" set shiftwidth=2
+" set softtabstop=2
 
 " STOP USING THE ARROWS
 map <Left> <Nop>
@@ -58,6 +58,9 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+map <Leader>a :bprev<Return>
+map <Leader>s :bnext<Return>
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
