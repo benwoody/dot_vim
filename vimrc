@@ -4,8 +4,9 @@ call pathogen#helptags()
 " General stuffs
 set history=100
 
+filetype on
+filetype indent on
 filetype plugin on
-filetype plugin indent on
 
 let mapleader = ","
 
@@ -20,6 +21,12 @@ set directory=~/.tmp/swp
 colorscheme vividchalk
 set background=dark
 set t_Co=256
+
+" Tabbing
+set expandtab
+set smarttab
+set shiftwidth=2
+set softtabstop=2
 
 " Interface
 syntax enable
@@ -41,11 +48,6 @@ set colorcolumn=80
 set ruler
 set number
 
-" Tabbing
-set expandtab
-set smarttab
-" set shiftwidth=2
-" set softtabstop=2
 
 " STOP USING THE ARROWS
 map <Left> <Nop>
