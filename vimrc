@@ -8,11 +8,12 @@ filetype on
 filetype indent on
 filetype plugin on
 
+" Leader mappings
 let mapleader = ","
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
-" I rarely use backups, but just in case
+" Backups
 set backup
 set backupdir=~/.tmp/swp
 set directory=~/.tmp/swp
@@ -49,6 +50,9 @@ set ruler
 set number
 
 
+" Mappings
+inoremap jk <Esc>
+
 " STOP USING THE ARROWS
 map <Left> <Nop>
 map <Right> <Nop>
@@ -75,4 +79,16 @@ imap <S-CR>    <CR><CR>end<Esc>-cc
 let g:Powerline_symbols = "unicode"
 
 " Ctags
-set tags=./.git/tags
+set tags=tags,./tags
+
+" Whitespace hacks                                                              
+function! <SID>StripTrailingWhitespaces()                                       
+  let _s=@/                                                                     
+  let l = line(".")                                                             
+  let c = col(".")                                                              
+  %s/\s\+$//e                                                                   
+  let @/=_s                                                                     
+  call cursor(l, c)                                                             
+endfunction                                                                     
+                                                                                
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
