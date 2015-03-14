@@ -5,13 +5,18 @@ call pathogen#helptags()
 set history=100
 
 filetype on
-filetype indent on
 filetype plugin on
+filetype indent on
 
 " Leader mappings
-let mapleader = ","
+let mapleader = "\<Space>"
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Backups
 set backup
@@ -22,6 +27,7 @@ set directory=~/.tmp/swp
 colorscheme vividchalk
 set background=dark
 set t_Co=256
+let g:Powerline_symbols = "unicode"
 
 " Tabbing
 set expandtab
@@ -49,7 +55,6 @@ set colorcolumn=80
 set ruler
 set number
 
-
 " Mappings
 inoremap jk <Esc>
 
@@ -58,6 +63,11 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+
+" Improve vim's scrolling speed
+set ttyfast
+set ttyscroll=3
+set lazyredraw
 
 " Windows and Buffers
 map <C-j> <C-W>j
@@ -76,8 +86,6 @@ autocmd BufReadPost *
 
 imap <S-CR>    <CR><CR>end<Esc>-cc
 
-let g:Powerline_symbols = "unicode"
-
 " Ctags
 set tags=tags,./tags
 
@@ -92,3 +100,25 @@ function! <SID>StripTrailingWhitespaces()
 endfunction                                                                     
                                                                                 
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" Invisible characters
+set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:❯,precedes:❮
+
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=1200
+
+" Project specific
+let g:rspec_command = 'call Send_to_Tmux("rug_spec {spec}\n")'
+
+" ctrp-p
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
+set wildignore+=*/public/**
+set wildignore+=*/vendor/**
+set wildignore+=*/log/**
+set wildignore+=*/temp/**
+
+
+" git things
+autocmd Filetype gitcommit setlocal spell textwidth=72
