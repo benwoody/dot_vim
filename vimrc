@@ -24,9 +24,12 @@ set hlsearch
 set autoread
 
 " Backups
-set backup
-set backupdir=~/.tmp/swp
-set directory=~/.tmp/swp
+set nobackup
+set nowb
+set noswapfile
+" set backup
+" set backupdir=~/.tmp/swp
+" set directory=~/.tmp/swp
 
 " Colors and such
 colorscheme vividchalk
@@ -88,8 +91,6 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-
-imap <S-CR>    <CR><CR>end<Esc>-cc
 
 " Ctags
 set tags=tags,./tags
