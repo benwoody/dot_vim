@@ -5,6 +5,7 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 set autoindent
+set diffopt+=vertical
 
 set expandtab
 set smarttab
@@ -55,6 +56,7 @@ nmap <leader>wq :wq<cr>
 
 " Geeknote
 noremap <leader>e :Geeknote<cr>
+noremap <leader>es :GeeknoteSync<cr>
 
 " Fugitive
 nmap <leader>gs :Gstatus<cr>
@@ -129,3 +131,14 @@ set wildignore+=*/temp/**
 
 " git things
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" Toggle line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+map <leader>n :call NumberToggle()<cr>
