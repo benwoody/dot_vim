@@ -76,6 +76,10 @@ map <Leader>ra :call RunAllSpecs()<CR>
 " Other mappings
 inoremap jk <Esc>
 
+" Flip colorschemes
+map <leader>bd :colorscheme vividchalk<cr>
+map <leader>bl :colorscheme github<cr>
+
 " STOP USING THE ARROWS
 map <Left> <Nop>
 map <Right> <Nop>
