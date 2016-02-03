@@ -38,6 +38,8 @@ set background=dark
 set t_Co=256
 let g:Powerline_symbols = "unicode"
 set synmaxcol=1200
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
 
 set colorcolumn=80
 set ruler
@@ -53,10 +55,6 @@ let mapleader = "\<Space>"
 
 nmap <leader>w :w<cr>
 nmap <leader>wq :wq<cr>
-
-" Geeknote
-noremap <leader>e :Geeknote<cr>
-noremap <leader>es :GeeknoteSync<cr>
 
 " Fugitive
 nmap <leader>gs :Gstatus<cr>

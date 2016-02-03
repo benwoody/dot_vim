@@ -46,9 +46,6 @@
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "bundle/dash"]
-	path = bundle/dash
-	url = https://github.com/rizzatti/dash.vim.git
 [submodule "bundle/vim-rspec"]
 	path = bundle/vim-rspec
 	url = https://github.com/thoughtbot/vim-rspec.git
@@ -61,6 +58,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-geeknote"]
-	path = bundle/vim-geeknote
-	url = https://github.com/neilagabriel/vim-geeknote
+[submodule "bundle/vim-indent-guides"]
+	path = bundle/vim-indent-guides
+	url = git@github.com:nathanaelkane/vim-indent-guides.git
