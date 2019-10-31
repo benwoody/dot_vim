@@ -112,7 +112,7 @@ endfunction
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Invisible characters
-set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:❯,precedes:❮
+" set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:❯,precedes:❮
 
 " Highlight trailing spaces in annoying red
 highlight ExtraWhitespace ctermbg=1 guibg=red
@@ -144,3 +144,6 @@ function! NumberToggle()
 endfunc
 
 map <leader>n :call NumberToggle()<cr>
+
+" linting help
+let g:syntastic_yaml_checkers = ['yamllint']
