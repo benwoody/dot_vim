@@ -1,3 +1,9 @@
+[submodule "bundle/ale"]
+        path = bundle/ale
+        url = https://github.com/dense-analysis/ale.git
+[submodule "bundle/vim-yaml"]
+        path = bundle/vim-yaml
+        url = https://github.com/stephpy/vim-yaml.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
@@ -55,3 +61,24 @@
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = git@github.com:nathanaelkane/vim-indent-guides.git
+[submodule "bundle/dash.vim"]
+	path = bundle/dash.vim
+	url = git@github.com:rizzatti/dash.vim.git
+[submodule "bundle/vim-jsx-pretty"]
+	path = bundle/vim-jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty.git
+[submodule "bundle/vim-js"]
+	path = bundle/vim-js
+	url = git@github.com:yuezk/vim-js.git
+[submodule "vim-jsx"]
+	path = vim-jsx
+	url = git@github.com:mxw/vim-jsx.git
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = git@github.com:mxw/vim-jsx.git
+[submodule "bundle/plantuml-previewer.vim"]
+	path = bundle/plantuml-previewer.vim
+	url = git@github.com:weirongxu/plantuml-previewer.vim.git
+[submodule "bundle/open-browser.vim"]
+	path = bundle/open-browser.vim
+	url = git@github.com:tyru/open-browser.vim.git

@@ -64,11 +64,13 @@ nmap <leader>gl :Git lg<cr>
 nmap <leader>gd :Gdiff<cr>
 vmap <leader>gb :Gblame<cr>
 
+set diffopt+=vertical
+
 " RSpec
-map <Leader>rc :call RunCurrentSpecFile()<CR>
-map <Leader>rn :call RunNearestSpec()<CR>
-map <Leader>rl :call RunLastSpec()<CR>
-map <Leader>ra :call RunAllSpecs()<CR>
+map <leader>rc :call RunCurrentSpecFile()<CR>
+map <leader>rn :call RunNearestSpec()<CR>
+map <leader>rl :call RunLastSpec()<CR>
+map <leader>ra :call RunAllSpecs()<CR>
 
 " Other mappings
 inoremap jk <Esc>
@@ -95,9 +97,6 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-" Ctags
-set tags=tags,./tags
-
 " Whitespace hacks
 function! <SID>StripTrailingWhitespaces()
   let _s=@/
@@ -111,7 +110,7 @@ endfunction
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Invisible characters
-" set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:❯,precedes:❮
+set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:❯,precedes:❮
 
 " Highlight trailing spaces in annoying red
 highlight ExtraWhitespace ctermbg=1 guibg=red
@@ -120,6 +119,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Ctags
+set tags=.tags,./.tags
+nnoremap <C-[>. :CtrlPTag<cr>
 
 " ctrl-p
 let g:ctrlp_map = '<c-p>'
@@ -146,3 +149,7 @@ map <leader>n :call NumberToggle()<cr>
 
 " linting help
 let g:syntastic_yaml_checkers = ['yamllint']
+
+" DASH integration
+command! DashDef silent !open -g dash://def:"<cword>"
+map <leader>k :DashDef<CR>\|:redraw!<CR>
