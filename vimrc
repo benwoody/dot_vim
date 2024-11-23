@@ -153,3 +153,4 @@ let g:syntastic_yaml_checkers = ['yamllint']
 " DASH integration
 command! DashDef silent !open -g dash://def:"<cword>"
 map <leader>k :DashDef<CR>\|:redraw!<CR>
+
